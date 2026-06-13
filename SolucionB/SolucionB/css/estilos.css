@@ -1,0 +1,80 @@
+html {
+    text-align: center;
+    background: url(../img/fondo.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#info {
+    overflow: hidden;
+}
+#info1, #info2 {
+    width: 45%;
+    height: 10em;
+    box-sizing: border-box;
+    background-color: rgba(43, 115, 163, 0.3);
+    padding: 4px;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow: auto;
+    font-size: x-large;
+    font-weight: bolder;
+    color:black;   
+}
+#info1 {
+    float: left;
+}
+#info2 {
+    float: right;
+}
+
+#principal {
+    clear: both;
+    width: 30%;
+    margin-top: 35px;
+    margin: 3% auto;
+    background-color: rgba(245, 239, 239, 0.2);
+}
+
+#pregunta {
+    padding: 3px;
+    font-style: italic;
+    font-size: xx-large;
+    font-weight: bolder;
+    background-color: rgba(245, 239, 239, 0.2);
+    display: inline;
+}
+
+#resultado {
+    height: 100px;
+}
+
+.fondoGris {
+    background-color: gainsboro;
+    width: 30%;
+    margin: auto;
+}
+
+.estiloListaPrincipal {
+    text-align: left;
+    width: 80%;
+    background-color: white;
+    margin: auto;
+}
+
+.entradaListaPrincipal {
+    color:red;
+    font-size: x-large; 
+}
+
+.entradaListaAnidada {
+    color: maroon;
+    font-size: larger;
+}
+
+.estiloInfoAdicional {
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+    color: blue;
+}
+

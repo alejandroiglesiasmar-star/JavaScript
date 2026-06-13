@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocaravanas</title>
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <script src="../scripts/script1.js"></script>
+  </head>
+  <body onload="crearLista()">
+    <h1>VACACIONES EN AUTOCARAVANA</h1>
+    <div id="info">
+      <div id="info1">
+        Es el turismo itinerante más atractivo de todos porque te da libertad
+        total. Si optas por viajar en una camper o motorhome, tú decides los
+        horarios y la ruta. Además, tiene la magia de hacerte disfrutar de
+        bellos lugares alejados de los recorridos turísticos convencionales.
+        Esta forma de viajar te acerca más a las costumbres de las diferentes
+        regiones que visitas y también a las personas. Es un turismo más humano.
+        Dejamos de ser simples turistas para convertirnos en viajeros.
+      </div>
+      <div id="info2">
+        Pero no acaban aquí las ventajas de viajar en autocaravana por España o
+        Europa . Viajar en camper te permite llevar tus cosas siempre contigo.
+        Una solución perfecta para los que nos cuesta cambiar de cama, dormir
+        con otra almohada o incluso para los que tenemos alergias o manías y nos
+        cuesta encontrar restaurantes. Y lo mejor de todo… refuerza los lazos
+        familiares. El tiempo de calidad con tus hijos es una gran realidad
+        dentro de la autocaravana. Viajar en autocaravana con niños es para
+        nosotros, sin duda, la más práctica y mejor forma de viajar con peques.
+      </div>
+    </div>
+    <div id="principal">
+      <p id="pregunta">¿Es para mi?</p>
+      <form>
+        <input type="checkbox" name="naturaleza" value="naturaleza" id="naturaleza" onchange="validarOpciones()"/>
+        <label for="naturaleza"> Naturaleza </label>
+        <input type="checkbox" name="ciudad" value="ciudad" id="ciudad" onchange="validarOpciones()"/>
+        <label for="ciudad"> Ciudad </label>
+        <input type="checkbox" name="espacio" value="espacio" id="espacio" onchange="validarOpciones()"/>
+        <label for="espacio"> Espacio </label>
+      </form>
+      <div id="resultado"></div>
+    </div>
+  </body>
+</html>
