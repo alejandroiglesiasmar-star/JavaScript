@@ -1,70 +1,50 @@
-const datosColumnas = [
-    ["Filtros (Aire, Aceite, otros)", "Mantenimiento mecánico*", "ITV(Inspección técnica de vehículos)",
-        "Impuesto Circulación", "Seguro**", "·Vehículo o medio de transporte extra", "PArking***", 
-        "Revisiones del conjunto", "Adaptar vehículo para remolcar"],
-    ["NO", "NO/SÍ", "NO/SÍ", "NO", "SI", "NO", "SI", "SI", "SI"],
-    ["SI", "SI", "SI", "SI", "SI", "SI", "NO/SÍ", "SI", "NO"]
-];
-
 function crearTabla(){
-    //Creamos el contenedor de la tabla y lo añadimos al documento
+    // 1. Creamos un <div> que servirá de caja/contenedor
     let divContenedor = document.createElement("div");
+    // Le ponemos la clase de CSS "fondoAzul" para que tenga estilo
     divContenedor.setAttribute("class", "fondoAzul");
+    // Lo "enganchamos" dentro del <body> de la web para que se pueda ver
     document.body.appendChild(divContenedor);
 
-    //Creamos la tabla y la añadimos al contenedor
+    // 2. Creamos la etiqueta <table> y la metemos dentro del <div> anterior
     let tabla = document.createElement("table");
     divContenedor.appendChild(tabla);
 
-    //Creación de las celdas que conforman la cabecera de la tabla
-    let cabecera = document.createElement("tr");
-    let col1 = document.createElement("th");
+    // 3. CREACIÓN DE LA CABECERA (La fila de títulos de arriba)
+    let cabecera = document.createElement("tr"); // Creamos la fila (tr)
+    
+    let col1 = document.createElement("th"); // Celda de cabecera vacía (esquina superior izquierda)
     cabecera.appendChild(col1);
-    let col2 = document.createElement("th");
+    
+    let col2 = document.createElement("th"); // Celda para "Caravana"
     col2.setAttribute("class", "estiloCeldaCabecera");
-    col2.textContent = "Caravana";
+    col2.textContent = "Caravana"; // Le metemos el texto dentro
     cabecera.appendChild(col2);
-    let col3 = document.createElement("th");
+    
+    let col3 = document.createElement("th"); // Celda para "Autocaravana"
     col3.setAttribute("class", "estiloCeldaCabecera");
     col3.textContent = "Autocaravana";
     cabecera.appendChild(col3);
+    
+    // Metemos toda la fila de cabecera dentro de la tabla
     tabla.appendChild(cabecera);
 
-    //Creación del resto de filas y celdas de la tabla
-    for (let i=0; i<9; i++) {
-        let fila = document.createElement("tr");
-        tabla.appendChild(fila);
-        for (let j = 0; j<3; j++) {
-            let celda = document.createElement("td");
-            celda.setAttribute("class","estiloCelda");
-            celda.textContent = datosColumnas[j][i];
-            fila.appendChild(celda);
+    // 4. BUCLE PARA RELLENAR LAS 9 FILAS RESTANTES
+    // El bucle exterior (i) va del 0 al 8 para crear las 9 filas de datos
+    for (let i = 0; i < 9; i++) {
+        let fila = document.createElement("tr"); // Crea una fila nueva
+        tabla.appendChild(fila); // La mete en la tabla
+        
+        // El bucle interior (j) va del 0 al 2 para crear las 3 columnas de esa fila
+        for (let j = 0; j < 3; j++) {
+            let celda = document.createElement("td"); // Crea una celda normal (td)
+            celda.setAttribute("class", "estiloCelda");
+            
+            // ¡OJO AQUÍ!: Lee el array bidimensional 'datosColumnas'. 
+            // Usa [j][i] en vez de [i][j] porque el array está ordenado por COLUMNAS y no por filas.
+            celda.textContent = datosColumnas[j][i]; 
+            
+            fila.appendChild(celda); // Mete la celda dentro de la fila actual
         }
-
     }
-
-}
-
-function validarOpciones() {
-    let naturaleza = document.getElementById("naturaleza").checked;
-    let ciudad = document.getElementById("ciudad").checked;
-    let espacio = document.getElementById("espacio").checked;
-
-    if (naturaleza && ciudad) {
-        alert("Aclárate!!!!");
-    } else if (ciudad || (ciudad && espacio)){
-        alert("No es para ti");
-    } else if(naturaleza || (naturaleza && espacio)) {
-        alert("Alquila una autocaravana");
-    }
-}
-
-function actualizarEstilos(elementoh1) {
-    let panel1 = document.getElementById("info1");
-    let panel2 = document.getElementById("info2");
-
-    panel1.setAttribute("class", "newInfo1");
-    panel2.setAttribute("class", "newInfo2");
-
-    elementoh1.removeAttribute("onclick");
 }
