@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes electrónicos</title>
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <script src="../script/vacaciones.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Inicio</li>
+        <li>Comprar</li>
+        <li>Descargas</li>
+        <li>Blog</li>
+      </ul>
+    </nav>
+    <header>
+      <h1 onclick="cambiarEstiloEncabezado()">Electronic devices</h1>
+      <div class="info">
+        <h2>Adquiere oline tus componentes electrónicos</h2>
+        <h3>Cualquier componente que puedas imaginar, a tu disposición</h3>
+      </div>
+    </header>
+    <section>
+      <h2>Mas vendidos</h2>
+      <div>
+        <img src="../img/micro2.jpg" />
+        <img src="../img/graf1.jpg" />
+        <img src="../img/refrig3.jpg" />
+      </div>
+    </section>
+    <section id="ultimaSeccion">
+      <h2>Por tipo</h2>
+      <select name="opcionesComp" onchange="actualizarComponentes()">
+            <option value="0"> Refrigeración </option>
+            <option value="1"> Microprocesadores </option>
+            <option value="2"> Tarjetas gráficas </option>
+            <option value="3"> Placas base </option>
+        </select>
+    </section>
+    <footer>
+      <div id="footerIzq">
+        <h3>Únete a nuestra newsletter</h3>
+        <form action="./registro.html" method="get" onsubmit="return validarEmail();">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Introduce un correo válido"
+            required
+          />
+          <button type="submit"> Suscribirme </button>
+        </form>
+      </div>
+      <div id="footerDer">
+        <p>
+          Nos encontrarás también en
+          <span> C/Cinco nº5 5A </span>
+          <span> Salamanca </span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
